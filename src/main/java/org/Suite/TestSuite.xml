@@ -1,0 +1,26 @@
+<suite name="Suite1" verbose="1">
+    <test name="test1" enabled="false">
+        <classes>
+            <class name="org.l2.MyNewTest"/>
+            <methods>
+                <include name="testSite"></include>
+            </methods>
+        </classes>
+    </test>
+    <test name="test2" enabled="false">
+        <classes>
+            <class name="org.l2.MyNewTest"/>
+            <methods>
+                <include name="testRozetka"></include>
+            </methods>
+        </classes>
+    </test>
+    <test name="test3" enabled="true">
+        <classes>
+            <class name="org.L3.MyNewTest"/>
+            <methods>
+                <include name="testGoToCategory"></include>
+            </methods>
+        </classes>
+    </test>
+</suite>
