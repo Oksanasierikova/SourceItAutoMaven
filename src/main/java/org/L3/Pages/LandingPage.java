@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LandingPage {
     public static final String INPUT_SELECTOR = "//input[contains(@class,'rz-header-search-input-text')]";
+    public static final String CHOOSE_CATEGORY = ".//*[@id='rz-search']/form/div[1]/div[1]/a/span";
+    public static final String CATEGORY_LAPTOPS = ".//*[@id='rz-search']/form/div[1]/div[1]/ul/li[2]/a";
     public WebDriver driver;
     public WebDriverWait wait;
 
@@ -20,9 +22,9 @@ public class LandingPage {
     public LandingPage search(String query) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(INPUT_SELECTOR)))
                 .sendKeys(query);
-        WebElement category = driver.findElement(By.xpath(".//*[@id='rz-search']/form/div[1]/div[1]/a/span"));
+        WebElement category = driver.findElement(By.xpath(CHOOSE_CATEGORY));
         category.click();
-        WebElement chooseCategory = driver.findElement(By.xpath(".//*[@id='rz-search']/form/div[1]/div[1]/ul/li[2]/a"));
+        WebElement chooseCategory = driver.findElement(By.xpath(CATEGORY_LAPTOPS));
         chooseCategory.click();
         wait.until(ExpectedConditions.elementToBeClickable(By.name("rz-search-button")))
                 .click();
